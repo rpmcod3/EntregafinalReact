@@ -7,14 +7,16 @@ import { Link } from 'react-router-dom';
 
 const CartWidget = () => {
 
-    const {getTotalItems} = useContext(CartContext)
+    /* const {cantidadTotal} = useContext(CartContext) */
+     const {getTotalItems} = useContext(CartContext) 
     
     return (
             <div>
             
             <Link to='/cart'><BiCartAlt/></Link>
             
-            <p>{getTotalItems()}</p>
+            {/* <p>{cantidadTotal}</p> */}
+            <p>{getTotalItems()}</p> 
             
             </div>
       

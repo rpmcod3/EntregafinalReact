@@ -6,22 +6,30 @@ export const CartContext = createContext();
 export const CartProvider = ({children}) => {
 
     const [cart,setCart] = useState([]);
+    const [total,setTotal] =useState(0);
+    const [cantidadTotal,setCantidadTotal]=useState(0);
 
     const addToCart = (producto,cantidad) => {
 
-        const productoExistente = cart.find(prod => prod.id === producto.id);
+        const productoExistente = cart.find(prod => prod.producto.id === producto.id);
+
         if(!productoExistente) { 
             setCart(prev => [...prev,{producto,cantidad}])
+            setCantidadTotal(prev => prev + cantidad)
+            setTotal(prev => prev + producto.precio * cantidad);
+
         }else{
             const carritoActualizado = cart.map(prod => {
-                if(prod.id ==Item.id){
-                    return {...prod,cantidad: prod.cantidad+cantidad}
+                if (prod.producto.id === producto.id) {
+                    return {...prod,cantidad: prod.cantidad+cantidad};
                 }else{
                     return prod;
                 }
             })
 
             setCart(carritoActualizado)
+            setCantidadTotal(prev => prev + cantidad);
+            setTotal(prev => prev + producto.precio * cantidad)
         }
 
      /*    if(!isInCart(producto.id)){
@@ -31,7 +39,7 @@ export const CartProvider = ({children}) => {
             console.log("no se puede agregar mas ")
         } */
 
-    } 
+    }; 
 
     const isInCart =() => {
         return cart.some((i)=> i.item.id === itemId)
@@ -45,19 +53,30 @@ export const CartProvider = ({children}) => {
 
         }
     
+        const removeItem = (id) => {
+            const productoEliminado = cart.find(prod => prod.producto.id === id);
+            const carritoActualizado = cart.filter(prod => prod.producto.id !== id);
 
-    const removeItem = (id) => {
-        const filtrarCarrito = cart.filter ((item)=> item.producto.id !== id )
-        setCart(filtrarCarrito)
+            setCart(carritoActualizado);
+
+            setCantidadTotal(prev => prev - productoEliminado.cantidad);
+
+            setTotal(prev => prev - productoEliminado.producto.precio * productoEliminado.cantidad);
+
+
+    /* const removeItem = (id) => {
+        const  = cart.filter ((item)=> item.producto.id !== id )
+        setCart(filtrarCarrito) */
+    
     }
 
     const clearCart = () => {
-        setCart([])
+        setCart([]);
+        setCantidadTotal(0);
+        setTotal(0);
     }
 
-    const getQuantity = ()=>{
-
-    }
+        
 
     return (
      <CartContext.Provider value= {
@@ -67,7 +86,8 @@ export const CartProvider = ({children}) => {
             addToCart,
             isInCart,
             getTotalItems,
-            getQuantity,
+            cantidadTotal,
+            total,
             removeItem,
             clearCart
 
@@ -77,5 +97,5 @@ export const CartProvider = ({children}) => {
         {children}
 
         </CartContext.Provider>
-    );
-};
+    )
+}
