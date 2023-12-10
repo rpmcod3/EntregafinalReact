@@ -1,0 +1,52 @@
+[
+    {
+        "id":1,
+        "nombre":"foto1",
+        "precio":100,
+        "img":"/img/espectaculos.jpg",
+        "descripcion":"detalle foto1",
+        "stock":10,
+        "categoria":"espectaculos"
+    },
+    {
+        "id":2,
+        "nombre":"foto2",
+        "precio":100,
+        "img":"/img/abstract.jpg",
+        "descripcion":"detalle foto2",
+        "stock":10,
+        "categoria":"abstract"
+
+    },
+    {
+        "id":3,
+        "nombre":"foto3",
+        "precio":100,
+        "img":"/img/eventos.jpg",
+        "descripcion":"detalle foto3",
+        "stock":10,
+        "categoria":"eventos"
+
+    },
+    {
+        "id":4,
+        "nombre":"foto4",
+        "precio":100,
+        "img":"img/carnaval.jpg",
+        "descripcion":"detalle foto4",
+        "stock":10,
+        "categoria":"carnaval"
+
+    },
+    {
+        "id":5,
+        "nombre":"foto5",
+        "precio":300,
+        "img":"/img/moda.jpg",
+        "descripcion":"detalle foto5",
+        "stock":10,
+        "categoria":"moda"
+
+    }
+
+]

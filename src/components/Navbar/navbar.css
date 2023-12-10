@@ -1,0 +1,33 @@
+
+.navegador{
+
+    background-color: antiquewhite;
+}
+
+.titulo{
+    color: rgb(1, 1, 21);
+    padding: 1%;
+    margin: 5%;
+    background-color: aqua;
+    text-align: center;
+
+}
+
+.lista {
+    background-color: antiquewhite;
+    padding: 1%;
+    margin: 5%;
+    text-align: center;
+    border-radius: 1%;
+    
+    
+}  
+
+.selector {
+
+    background-color: rgb(187, 245, 227);
+    padding: 1%;
+    margin: 5%;
+    text-align: center;
+    
+} 

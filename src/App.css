@@ -1,0 +1,49 @@
+.carrousel{
+    background-color: rgb(172, 247, 241);
+    padding: 5%;
+    margin: 5%;
+    text-align: center;
+}
+
+.contenedor{
+    
+    padding: 5%;
+    margin: 5%;
+    text-align: center;
+}
+
+.button { 
+    padding: 1%;
+    margin: 5%;
+    text-align: center;
+    border-radius: 4px;
+    font-size: 15px;
+    border: solid #000000 1px;
+    width: 200px;
+    height: 50px;
+    text-shadow: 1px 1px 15px #666666;
+}
+
+.tarjetas{
+
+    background-color: rgb(230, 248, 246);
+
+}
+
+.detalles {
+    padding: 5%;
+    margin: 5%;
+    text-align: center;
+
+}
+.footer{
+    background-color: rgb(243, 246, 246);
+    padding: 5%;
+    margin: 5%;
+    text-align: center;
+    font-size: 5px;
+    font-style: italic;
+    text-shadow: 1px 1px 15px #f6f3f3;
+    color:rgb(193, 237, 237)
+    
+}
