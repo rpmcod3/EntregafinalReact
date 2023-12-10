@@ -42,13 +42,4 @@ export default ItemDetailContainer;
 
 
 
-        /* const fetchData = () => {
-            return fetch("/data/productos.json")
-            .then((response)=>response.json())
-            .then((data)=> {
-                const foundProduct = data.find((item)=> item.id == idProduct) 
-                setProduct(foundProduct)
-            })
-            .catch((error)=>console.log(error))
-            fetchData()
-        } */
+        

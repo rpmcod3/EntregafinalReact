@@ -32,13 +32,6 @@ export const CartProvider = ({children}) => {
             setTotal(prev => prev + producto.precio * cantidad)
         }
 
-     /*    if(!isInCart(producto.id)){
-            setCart((prev)=> [...prev,{producto,cantidad}])
-
-        }else{
-            console.log("no se puede agregar mas ")
-        } */
-
     }; 
 
     const isInCart =() => {
@@ -64,9 +57,6 @@ export const CartProvider = ({children}) => {
             setTotal(prev => prev - productoEliminado.producto.precio * productoEliminado.cantidad);
 
 
-    /* const removeItem = (id) => {
-        const  = cart.filter ((item)=> item.producto.id !== id )
-        setCart(filtrarCarrito) */
     
     }
 
@@ -97,5 +87,5 @@ export const CartProvider = ({children}) => {
         {children}
 
         </CartContext.Provider>
-    )
-}
+    );
+};
