@@ -14,38 +14,20 @@ import Contacto from './components/Contacto/Contacto'
 import Error from './components/Error/Error'
 import Cart from './components/Cart/Cart';
 import { CartProvider } from './context/CartContext.jsx'
+import Checkout from './components/Checkout/Checkout.jsx'
 
-/* import {getFirestore,collection,getDocs} from "firebase/firestore"; */
+
 
 
  function App() {
 
-  /* const [product,setProduct] = useState(null)
-
-    useEffect(()=> {
-      const db = getFirestore()
-
-      const collectionRef = collection(db,"productos")
-      getDocs(collectionRef).then((snapshot)=> {
-        setProduct(snapshot.docs.map((doc) =>(
-          {id: doc.id,...doc.data()}
-        )))
-
-      })
-      
-
   
- },[])
-   
- console.log(product) */
-
-
   return (
     <>
   
    
 
-    <BrowserRouter>
+   <BrowserRouter>
 
     <CartProvider>
 
@@ -58,6 +40,7 @@ import { CartProvider } from './context/CartContext.jsx'
       <Route path='/item/:idProduct'  element={<ItemDetailContainer/>}/>
       <Route path='/contacto' element={<Contacto/>}/>
       <Route path='/Cart' element={<Cart/>}/>
+      <Route Path='/Checkout' element={<Checkout/>}></Route>
       <Route path='*' element={<Error/>}/>
 
       </Routes>
@@ -66,9 +49,9 @@ import { CartProvider } from './context/CartContext.jsx'
 
       </CartProvider>
 
-    </BrowserRouter> 
-     
-     
+    </BrowserRouter>  
+
+
       </>
   )
 }
