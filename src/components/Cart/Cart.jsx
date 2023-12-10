@@ -12,7 +12,7 @@ const Cart = () => {
 
   return (
     <div>
-      <h1>Tu Carrito</h1>
+      <h1>Tu Carrito </h1>
      
       <ul>
 
