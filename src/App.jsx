@@ -13,6 +13,7 @@ import Footer from './components/Footer/Footer'
 import Contacto from './components/Contacto/Contacto'
 import Error from './components/Error/Error'
 import Cart from './components/Cart/Cart';
+import { CartProvider } from './context/CartContext.jsx'
 
 
 
@@ -25,6 +26,9 @@ import Cart from './components/Cart/Cart';
    
 
     <BrowserRouter>
+
+    <CartProvider>
+      
     <NavBar/>
 
     <Routes>
@@ -39,6 +43,9 @@ import Cart from './components/Cart/Cart';
       </Routes>
 
       <Footer/>
+
+      </CartProvider>
+
     </BrowserRouter> 
      
      
