@@ -21,22 +21,24 @@ export const CartProvider = ({children}) => {
 
     }
 
-    const getTotalItems = (item) => {   
-        let total = 0;
-        cart.forEach((e)=> total += e.cantidad)
-        return total
+    const getTotalItems = () => {   
+        let cant = 0;
+        cart.forEach((e)=> cant += e.cantidad)
+        return cant
 
         }
     
 
-    const removeItem = () => {
-
-
+    const removeItem = (id) => {
+        const filtrarCarrito = cart.filter ((item)=> item.producto.id !== id )
+        setCart(filtrarCarrito)
     }
 
     const clearCart = () => {
-
+        setCart([])
     }
+
+    
 
     return (
      <CartContext.Provider value= {

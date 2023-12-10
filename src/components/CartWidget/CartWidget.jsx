@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { BiCartAlt } from "react-icons/bi";
 import { CartContext } from '../../context/CartContext';
 import Cart from '../Cart/Cart';
+import { Link } from 'react-router-dom';
 
 
 const CartWidget = () => {
@@ -10,8 +11,11 @@ const CartWidget = () => {
     
     return (
             <div>
-            <BiCartAlt/>
+            
+            <Link to='/cart'><BiCartAlt/></Link>
+            
             <p>{getTotalItems()}</p>
+            
             </div>
       
     );
