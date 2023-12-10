@@ -2,7 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
-/* 
+
+
 import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
@@ -15,7 +16,7 @@ const firebaseConfig = {
 };
 
 
-const app = initializeApp(firebaseConfig); */
+const app = initializeApp(firebaseConfig);
 
 
 import 'bootstrap/dist/css/bootstrap.min.css';
