@@ -54,7 +54,7 @@ import Checkout from './components/Checkout/Checkout.jsx'
 
       </>
   )
-}
+};
 
 
 export default App

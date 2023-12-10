@@ -1,24 +1,33 @@
 import React, {useState, useEffect} from 'react';
 import ItemDetail from '../ItemDetail/ItemDetail';
 import { useParams } from 'react-router-dom';
+import {collection,getDoc,doc, getFirestore,query,where} from "firebase/firestore"
+
 
 const ItemDetailContainer = () => {
-        const [product, setproduct]= useState(null)
-        
-        const {idProduct} = useParams()
 
-        useEffect(()=>{
-            const fetchData = ()=> {
-            return fetch ("/data/productos.json")
-            .then((response)=>response.json())
-            .then((data)=> { 
-            const foundProduct = data.find ((item)=> item.id == idProduct)
-            setproduct(foundProduct)
-            })
-            .catch ((error)=>console.log(error))
-        }
-        fetchData()
+    const [product, setProduct] = useState(null)
+
+    const {idProduct} = useParams()
+    
+
+    useEffect(()=>{
+
+        const db = getFirestore()
+        const nuevoDoc = doc(db,"productos",idProduct)
+
+        getDoc (nuevoDoc)
+        .then(res => {
+            const data= res.data();
+            const nuevoProducto = {id: res.id,...data}
+            setProduct(nuevoProducto)
+        })
+        .catch(error => console.log(error))
+        
+        
     },[idProduct])
+
+    
 
     return (
         <div>
@@ -30,3 +39,16 @@ const ItemDetailContainer = () => {
 };
 
 export default ItemDetailContainer;
+
+
+
+        /* const fetchData = () => {
+            return fetch("/data/productos.json")
+            .then((response)=>response.json())
+            .then((data)=> {
+                const foundProduct = data.find((item)=> item.id == idProduct) 
+                setProduct(foundProduct)
+            })
+            .catch((error)=>console.log(error))
+            fetchData()
+        } */

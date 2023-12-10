@@ -5,19 +5,18 @@ import {collection,getDocs,getFirestore,query,where} from "firebase/firestore"
 
 const ItemListContainer = () => {
     const [products, setProducts] = useState([]);
-    const [loading, setLoading] = useState (true)
-    const {categoryId} = useParams()
+    const [loading, setLoading] = useState (true);
+    const {categoryId} = useParams();
 
     useEffect(()=>{
 
         setLoading(true);
-       
         const db = getFirestore()
 
         
 
         const misProductos = categoryId 
-        ? query(collection(db,"productos",where("categoria","==",categoryId)))
+        ? query (collection(db,"productos"),where("categoria","==",categoryId))
         : collection(db,"productos")
 
         getDocs(misProductos)
