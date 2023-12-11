@@ -19,8 +19,8 @@ const Cart = () => {
       <div>
 
       
-        {
-
+        
+{
             cart.lenght == 0 ? 
             <div>
               <h2> No hay productos en el Carrito</h2>
@@ -35,14 +35,11 @@ const Cart = () => {
                   }
                   <h2>Valor Total del Carrito: ${total}</h2>
       <button onClick={clearCart}>Vaciar Carrito</button>
-      <Link to={"/Checkout"}>Completa tu Compra</Link>
+      <Link to={"/CheckOut"}>Completa tu Compra</Link>
+
                </div>
-
-          }
-
-        
-
-      </div>
+}
+            </div>
         
                     
           </div>

@@ -14,7 +14,7 @@ import Contacto from './components/Contacto/Contacto'
 import Error from './components/Error/Error'
 import Cart from './components/Cart/Cart';
 import { CartProvider } from './context/CartContext.jsx'
-import Checkout from './components/Checkout/Checkout.jsx'
+import CheckOut from './components/Checkout/Checkout.jsx'
 
 
 
@@ -25,9 +25,7 @@ import Checkout from './components/Checkout/Checkout.jsx'
   return (
     <>
   
-   
-
-   <BrowserRouter>
+      <BrowserRouter>
 
     <CartProvider>
 
@@ -39,8 +37,8 @@ import Checkout from './components/Checkout/Checkout.jsx'
       <Route path='/:categoryId' element={<ItemListContainer/>}/>
       <Route path='/item/:idProduct'  element={<ItemDetailContainer/>}/>
       <Route path='/contacto' element={<Contacto/>}/>
-      <Route path='/Cart' element={<Cart/>}/>
-      <Route Path='/Checkout' element={<Checkout/>}></Route>
+      <Route path='/cart' element={<Cart/>}/>
+      <Route path='/checkOut' element={<CheckOut/>}/>
       <Route path='*' element={<Error/>}/>
 
       </Routes>
