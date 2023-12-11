@@ -15,7 +15,7 @@ const ItemDetail = ({producto}) => {
        
         setQuantity(cantidad)  
         addToCart(producto,cantidad)
-        alert(cantidad)
+        
     }
 
    
